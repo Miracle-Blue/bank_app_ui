@@ -1,5 +1,3 @@
-import 'dart:ui' as ui;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -69,7 +67,7 @@ class CustomCard extends StatelessWidget {
                               child: Text(
                                 '04/24',
                                 style: TextStyle(
-                                  color: ui.Color.fromRGBO(255, 255, 255, .7),
+                                  color: Color.fromRGBO(255, 255, 255, .7),
                                   fontSize: 12,
                                   fontWeight: FontWeight.w300,
                                 ),
