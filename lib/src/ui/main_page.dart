@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../common/constants/app_image.dart';
 import 'home_page/home_page.dart';
 import 'widgets/custom_navigation_bar.dart';
 
@@ -45,7 +46,7 @@ class _MainState extends State<Main> {
               onTap: () {},
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset('assets/icons/bookmark_ic.svg'),
+                child: SvgPicture.asset(AppImages.bockmarkSVG),
               ),
             ),
             InkWell(
@@ -53,7 +54,7 @@ class _MainState extends State<Main> {
               child: const Padding(
                 padding: EdgeInsets.all(2.0),
                 child: Image(
-                  image: AssetImage('assets/images/im_main_add.png'),
+                  image: AssetImage(AppImages.mainAddPNG),
                 ),
               ),
             ),
@@ -61,14 +62,14 @@ class _MainState extends State<Main> {
               onTap: () {},
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset('assets/icons/notification_ic.svg'),
+                child: SvgPicture.asset(AppImages.notificationSVG),
               ),
             ),
             InkWell(
               onTap: () {},
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset('assets/icons/profile_ic.svg'),
+                child: SvgPicture.asset(AppImages.profileSVG),
               ),
             ),
           ],

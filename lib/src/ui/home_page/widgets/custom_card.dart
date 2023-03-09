@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../app.dart';
+import '../../../common/constants/app_image.dart';
 import 'card_gradient.dart';
 
 class CustomCard extends StatelessWidget {
@@ -8,6 +10,7 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = AppInheritedWidget.of(context)?.user;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: SizedBox(
@@ -34,9 +37,9 @@ class CustomCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      '\$1.924,35',
-                      style: TextStyle(
+                    Text(
+                      user?.card?.money ?? '',
+                      style: const TextStyle(
                         color: Color(0xFFFFFFFF),
                         fontSize: 32,
                         fontWeight: FontWeight.w500,
@@ -46,16 +49,16 @@ class CustomCard extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          SvgPicture.asset('assets/icons/nfc_ic.svg'),
+                          SvgPicture.asset(AppImages.nfcSVG),
                         ],
                       ),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          '5489 7654 3210 7894',
-                          style: TextStyle(
+                        Text(
+                          user?.card?.cardNumber ?? '',
+                          style: const TextStyle(
                             color: Color(0xFFFFFFFF),
                             fontSize: 16,
                             fontWeight: FontWeight.w300,
@@ -63,17 +66,17 @@ class CustomCard extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            const Expanded(
+                            Expanded(
                               child: Text(
-                                '04/24',
-                                style: TextStyle(
+                                user?.card?.endDate ?? '',
+                                style: const TextStyle(
                                   color: Color.fromRGBO(255, 255, 255, .7),
                                   fontSize: 12,
                                   fontWeight: FontWeight.w300,
                                 ),
                               ),
                             ),
-                            SvgPicture.asset('assets/icons/mastercard_ic.svg'),
+                            SvgPicture.asset(AppImages.mastercardSVG),
                           ],
                         )
                       ],
